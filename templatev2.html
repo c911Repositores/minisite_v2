@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-desk">
+            <div class="nav-desk__container autosize">
+                <img class="nav-desk__logo" onclick="scroll_home()" src="img/logo.svg" alt="Logo">
+                <ul class="nav-desk__menuprimary" id="menuprimary">
+                    <li><a href="#javascript:void(0)" class="nav-desk__selected" onclick="scroll_home()">Accueil</a></li>
+                    <li><a href="#plans_section">Plans</a></li>
+                    <li><a href="#features_section" onclick="open_measures()">Métrés</a></li>
+                    <li><a href="#map_section">Coordonnées</a></li>
+                    <li><a href="#features_section" onclick="open_features()">Caractéristiques</a></li>
+                </ul>
+                <div class="nav-desk__agent">
+                    <a href="#contact_us_section"><img class="nav-desk__agent-img" src="img/agent.jpg" alt="Agent image"></a>
+                    <i class="btn_bars fas fa-bars" id="btn_bars" onclick="open_nevmenu()"></i>
+                    <i class="btn_closebars fas fa-times hidden" id="btn_closebars" onclick="open_nevmenu()"></i>
+                </div>
+            </div>
+        </div>
+        <div class="open-navmenu hidden-nav" id="open_navmenu">
+            <ul>
+                <li class="btndesk-desc"><a href="#description_desk" onclick="open_nevmenu()"><i class="far fa-file"></i> Description</li></a>
+                <li class="btnmobile-desc"><a href="#javascript:void(0)" onclick="scroll_home()"><i class="far fa-file"></i> Description</li></a>
+
+                <li class="btndesk-caract"><a href="#features_section" onclick="navopen_features()"><i class="fas fa-list-alt"></i> Caractéristiques</li></a>
+                <li class="btnmob-caract"><a href="#features_mobile" onclick="navopen_features()"><i class="fas fa-list-alt"></i> Caractéristiques</li></a>
+
+                <li class="btndesk-feat"><a href="#features_section" onclick="navopen_measures()"><i class="fas fa-ruler"></i> Métrés</li></a>
+                <li class="btnmob-feat"><a href="#mobile_measurements" onclick="navopen_measures()"><i class="fas fa-ruler"></i> Métrés</li></a>
+
+                <li class="btndesk-plans"><a href="#plans_section" onclick="open_nevmenu()"><i class="fas fa-laptop-house"></i> Plans</li></a>
+                <li class="btnmob-plans"><a href="#javascript:void(0)" onclick="navroom_data()"><i class="fas fa-laptop-house"></i> Plans</li></a>
+
+                <li><a href="#technical_section" onclick="open_nevmenu()"><i class="fas fa-wrench"></i> Technique</li></a>
+                <li><a href="#documents_section" onclick="open_nevmenu()"><i class="fas fa-file-alt"></i> Documents</li></a>
+
+                <li class="btndesk-map"><a href="#map_section" onclick="open_nevmenu()"><i class="fas fa-map-marker-alt"></i> Environnement et 
+                    coordonnées</li></a>
+                <li class="btnmob-map"><a href="#mobile_map" onclick="open_nevmenu()"><i class="fas fa-map-marker-alt"></i> Environnement et 
+                    coordonnées</li></a>
+
+                <li><a href="#agency_section" onclick="open_nevmenu()"><i class="fas fa-users"></i> L ‘ agence</li></a>
+                <li><a href="#contact_us_section" onclick="open_nevmenu()"><i class="fas fa-user"></i> Contact</li></a>
+                <li><a href="#brochure_section" onclick="open_nevmenu()"><i class="fas fa-scroll"></i> Télécharger le livret</li></a>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="header-desk" id="header_section">
+        <div class="header-desk__slide" id="headerdesk__slide">
+            <div class="header-desk__video" id="desk__video" style="background-image: url('img/video.jpg');"></div>
+            <div class="header-desk__img" style="background-image: url('img/room.jpg');"></div>
+            <div class="header-desk__img" style="background-image: url('img/room.jpg');"></div>
+            <!-- <img class="header-desk__video" id="desk__video" width="100%" height="100%" src="img/video.jpg" alt="Slide">
+            <img class="header-desk__img" width="100%" height="100%" src="img/room.jpg" alt="Slide">
+            <img class="header-desk__img" width="100%" height="100%" src="img/room.jpg" alt="Slide"> -->
+        </div>
+        <div class="header-desk__info" id="general_info">
+            <div class="header-desk__title">
+                <p class="header-desk__name">Extérieur <br>
+                Maison  
+                </p>
+                <p class="header-desk__des">blabladeded 89, 4400 Flémalle</p>
+                <div class="peb-section">
+                    <p>180.003€</p> 
+                    <div class="peb"><p>PEB</p></div> 
+                    <div class="peb-c"><div><p>C</p></div><div class="triangulo"></div></div>
+                </div>
+                <div class="nav-button-controls hidden">
+                    <img src="img/360-icon.svg" alt="360 icon">
+                </div>
+            </div>
+            <div class="description-mobile__text hidden hidden-text" id="desc_mobile">
+                <div>
+                    <h3>blabladeded 89, 4400 Flémalle</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vestibulum convallis tempus. Vivamus placerat mi eu molestie laoreet. Praesent a posuere augue. In lorem nisl, congue vel nulla cursus, pretium interdum nibh. Cras lobortis massa rutrum tempor finibus. Pellentesque nisi arcu, convallis eget rhoncus ac, dapibus et risus. Nulla ultrices, nibh egestas iaculis vestibulum, metus erat varius augue, eget auctor ante tellus in augue. Vivamus fermentum quam a mauris interdum feugiat. Maecenas finibus erat est, in cursus enim imperdiet nec. Phasellus auctor, tellus sed euismod gravida, enim massa congue lacus, vel dignissim ipsum odio id nulla. Vivamus vel turpis justo.
+            
+                    <p>In quis lobortis enim. Praesent a arcu sagittis, tempor nisi a, sagittis magna. Donec pharetra consequat metus. Praesent hendrerit blandit libero, eget condimentum nulla interdum id. Praesent in pharetra lacus. Cras fermentum tempor diam, maximus euismod sapien consequat vestibulum. Sed velit arcu, luctus et purus at, egestas finibus eros. Curabitur dapibus, enim vel rhoncus scelerisque, felis tortor interdum nunc, vitae mollis eros massa at eros.</p>
+                    
+                    <p>Pellentesque nec quam molestie, tincidunt tellus vel, maximus eros. Nulla ullamcorper, erat sed viverra hendrerit, risus lectus scelerisque dui, at rhoncus metus justo at leo. Morbi bibendum vehicula neque vitae pulvinar. Maecenas ex nisi, lacinia ac venenatis eu, dictum non ante. Aliquam erat volutpat. Suspendisse id faucibus sapien. Duis tincidunt sem sit amet erat suscipit aliquam. Quisque eu dapibus ipsum, vitae lacinia eros. Ut rutrum, tortor euismod posuere varius, purus risus maximus velit, eu condimentum neque ligula in sem. Suspendisse dapibus tincidunt facilisis.</p>
+                    
+                    <p>Cras nec feugiat justo. Vivamus a ipsum scelerisque, commodo libero ac, iaculis ligula. Cras hendrerit mollis metus, sed vehicula nulla sodales eget. Nam nec tellus et metus fringilla luctus. Curabitur eu aliquam felis, posuere suscipit sapien. Fusce et cursus enim. Phasellus at dapibus augue, eget rhoncus turpis. Aenean condimentum tellus ut velit pretium aliquet. Donec vitae blandit urna, quis dignissim neque.</p>
+                    
+                    <p>Fusce volutpat ornare egestas. Pellentesque et felis enim. Maecenas non diam gravida, tincidunt odio quis, varius velit. Donec congue velit vitae lectus auctor tempor. </p>
+                    
+                    <div>
+                        <button class="cbutton" onclick="show_desc()">Voir plus</button>
+                    </div>
+                </div>
+            </div>
+            <div class="header-desk__container header-mobile-measures">
+                <div class="header-desk__measures">
+                    <div>
+                        <i class="fas fa-arrows-alt-v"></i>
+                        <p>3.05</p>
+                        <p>Largeur</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-arrows-alt-h"></i>
+                        <p>3.69</p>
+                        <p>Longueur</p>
+                    </div>
+                    <div>
+                        <img src="img/flat-icon.svg" alt="Flat icon">
+                        <p>905</p>
+                        <p>m²</p>
+                    </div>
+                    <div>
+                        <img src="img/room-icon.svg" alt="Room icon">
+                        <p>3</p>
+                        <p>Chambres</p>
+                    </div>
+                    <div>
+                        <img src="img/bathroom-icon.svg" alt="bathroom icon">
+                        <p>1</p>
+                        <p>Salles d'eau</p>
+                    </div>
+                    <div>
+                        <img src="img/place-icon.svg" alt="Place icon">
+                        <p>1</p>
+                        <p>Places</p>
+                    </div>
+                    <div>
+                        <img src="img/garden-icon.svg" alt="Garden icon">
+                        <p>Jardin</p>
+                        <p>fermé</p>
+                    </div>
+                    <div>
+                        <img src="img/umbrella-icon.svg" alt="Umbrella icon">
+                        <p>50</p>
+                        <p>m²</p>
+                    </div>
+                </div>
+                <div class="header-desk__measures2">
+                    <div>
+                        <table>
+                            <tr>
+                                <td>Etat général</td>
+                                <td>Bon état</td>
+                            </tr>
+                            <tr>
+                                <td>Surface totale</td>
+                                <td>905 m²</td>
+                            </tr>
+                            <tr>
+                                <td>Rez-de-chaussée</td>
+                                <td>52 m²</td>
+                            </tr>
+                            <tr>
+                                <td>1er étage</td>
+                                <td>52 m²</td>
+                            </tr>
+                            <tr>
+                                <td>Sous-sol</td>
+                                <td>53 m²</td>
+                            </tr>
+                            <tr>
+                                <td>Sous-col</td>
+                                <td>105 m²</td>
+                            </tr>
+                            <tr>
+                                <td>Nombre de façades</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>Nombre d'étages</td>
+                                <td>1</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-desk__inforoom hidden-opacity" id="room_info">
+            <div class="header-desk__roomtitle">
+                <p class="header-desk__roomname">Rez de chaussée</p>
+                <div class="peb-section">
+                    <p class="header-desk__des">Hall d’entrée</p>
+                    <div class="peb"><p>PEB</p></div> 
+                    <div class="peb-c"><div><p>C</p></div><div class="triangulo"></div></div>
+                </div>
+                <div class="nav-button-controls hidden">
+                    <img src="img/360-icon.svg" alt="360 icon">
+                </div>
+            </div>
+            <div class="header-desk__container">
+                <div class="header-desk__measures">
+                    <div>
+                        <i class="fas fa-arrows-alt-v"></i>
+                        <p>3.05</p>
+                        <p>Largeur</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-arrows-alt-h"></i>
+                        <p>3.69</p>
+                        <p>Longueur</p>
+                    </div>
+                    <div>
+                        <img src="img/flat-icon.svg" alt="Flat icon">
+                        <p>905</p>
+                        <p>m²</p>
+                    </div>
+                </div>
+                <div class="header-desk__submenu">
+                    <div id="headerdesk_plan" class="header-desk__submenu-select"><p>Plan</p></div>
+                    <div id="headerdesk_info"><p>Info</p></div>
+                </div>
+                <div class="header-desk__plan" id="header_plan">
+                    <img height="50%" src="img/plan-vertically.png" alt="Plan image">
+                </div>
+                <div class="header-desk__roomeasures hidden-opacity" id="room_measures">
+                    <div>
+                        <table>
+                            <tr>
+                                <td>Accès</td>
+                                <td>Parking place(s) 1 places</td>
+                            </tr>
+                            <tr>
+                                <td>Porte</td>
+                                <td>Battante, Pvc, Anti-effraction</td>
+                            </tr>
+                            <tr>
+                                <td>Fenêtre</td>
+                                <td>Châssis type battants matière bois, Vitrage simple, Châssis pvc double vitrage type sans ouverture </td>
+                            </tr>
+                            <tr>
+                                <td>Sol</td>
+                                <td>Carrelage</td>
+                            </tr>
+                            <tr>
+                                <td>Hauteur sous-plafond</td>
+                                <td>2,76 m</td>
+                            </tr>
+                            <tr>
+                                <td>Éclairage</td>
+                                <td>Mural</td>
+                            </tr>
+                            <tr>
+                                <td>Escalier</td>
+                                <td>Marbre, Avec palier </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </html>
+
+    <section class="share" id="btn_share">
+        <div class="share__close" id="share_close" onclick="open_share()">
+            <i class="fas fa-share-alt"></i>
+        </div>
+        <div  class="share__open hidden-opacity" id="share_open">
+            <a href="https://www.whatsapp.com/?lang=es" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.messenger.com/" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+            <a href="https://es-la.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/?hl=es-la" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="javascript:void(0)"><i class="fas fa-copy"></i></a>
+            <i class="btn-close far fa-times-circle" onclick="btn_close()"></i>
+        </div>
+    </section>
+
+    <section class="description-desk" id="description_desk">
+        <div class="description-desk__container autosize">
+            <div class="button-controls">
+                <img src="img/360-icon.svg" alt="360 icon">
+            </div>
+            <div class="description-desk__text">
+                <h3>blabladeded 89, 4400 Flémalle</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vestibulum convallis tempus. Vivamus placerat mi eu molestie laoreet. Praesent a posuere augue. In lorem nisl, congue vel nulla cursus, pretium interdum nibh. Cras lobortis massa rutrum tempor finibus. Pellentesque nisi arcu, convallis eget rhoncus ac, dapibus et risus. Nulla ultrices, nibh egestas iaculis vestibulum, metus erat varius augue, eget auctor ante tellus in augue. Vivamus fermentum quam a mauris interdum feugiat. Maecenas finibus erat est, in cursus enim imperdiet nec. Phasellus auctor, tellus sed euismod gravida, enim massa congue lacus, vel dignissim ipsum odio id nulla. Vivamus vel turpis justo.
+        
+                <p>In quis lobortis enim. Praesent a arcu sagittis, tempor nisi a, sagittis magna. Donec pharetra consequat metus. Praesent hendrerit blandit libero, eget condimentum nulla interdum id. Praesent in pharetra lacus. Cras fermentum tempor diam, maximus euismod sapien consequat vestibulum. Sed velit arcu, luctus et purus at, egestas finibus eros. Curabitur dapibus, enim vel rhoncus scelerisque, felis tortor interdum nunc, vitae mollis eros massa at eros.</p>
+                
+                <p>Pellentesque nec quam molestie, tincidunt tellus vel, maximus eros. Nulla ullamcorper, erat sed viverra hendrerit, risus lectus scelerisque dui, at rhoncus metus justo at leo. Morbi bibendum vehicula neque vitae pulvinar. Maecenas ex nisi, lacinia ac venenatis eu, dictum non ante. Aliquam erat volutpat. Suspendisse id faucibus sapien. Duis tincidunt sem sit amet erat suscipit aliquam. Quisque eu dapibus ipsum, vitae lacinia eros. Ut rutrum, tortor euismod posuere varius, purus risus maximus velit, eu condimentum neque ligula in sem. Suspendisse dapibus tincidunt facilisis.</p>
+                
+                <p>Cras nec feugiat justo. Vivamus a ipsum scelerisque, commodo libero ac, iaculis ligula. Cras hendrerit mollis metus, sed vehicula nulla sodales eget. Nam nec tellus et metus fringilla luctus. Curabitur eu aliquam felis, posuere suscipit sapien. Fusce et cursus enim. Phasellus at dapibus augue, eget rhoncus turpis. Aenean condimentum tellus ut velit pretium aliquet. Donec vitae blandit urna, quis dignissim neque.</p>
+                
+                <p>Fusce volutpat ornare egestas. Pellentesque et felis enim. Maecenas non diam gravida, tincidunt odio quis, varius velit. Donec congue velit vitae lectus auctor tempor. </p>
+            </div>
+            <div class="description-desk__creditform">
+                <h3>Simulateur express de crédit</h3>
+                <div class="input-text">
+                    <label for="price">Le prix de vente du bien</label>
+                    <input id="price" type="text" placeholder="325.000 €">
+                </div>
+                <div class="input-text">
+                    <label for="percent">Votre apport personnel en %</label>
+                    <input id="percent" type="text" placeholder="0">
+                </div>
+                <div class="input-text">
+                    <label for="credit">La durée de votre crédit en années</label>
+                    <input id="credit" type="text" placeholder="0">
+                </div>
+                <div class="input-text">
+                    <label for="interest_rate">Précisez le taux d’intérét en %</label>
+                    <input id="interest_rate" type="text" placeholder="0">
+                </div>
+                <div>
+                    <button class="cbutton">lancer le calcul</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-desk" id="features_section">
+        <div class="features-desk__container autosize">
+            <ul class="tabs features_section">
+                <li id="btn_features"><a href="#tab1">Caractéristiques</a></li>
+                <li id="btn_measures"><a href="#tab2">Métrés</a></li>
+            </ul>
+
+            <div class="tab_container">
+                <div class="tab_content" id="tab1">
+                    <div class="tab__features1">
+                        <div class="tab__features__title">
+                            <i class="fas fa-globe"></i><p>Description globale du bien</p>
+                        </div>
+                        <div>
+                            <table>
+                                <tr>
+                                    <td>Etat général</td>
+                                    <td>Bon état</td>
+                                </tr>
+                                <tr>
+                                    <td>Surface totale</td>
+                                    <td>905 m²</td>
+                                </tr>
+                                <tr>
+                                    <td>Nombre de façades</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>Nombre d'étages</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <td>Nombre de chambre(s)</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <td>Nombre de salle de bains</td>
+                                    <td>1</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="tab__features__title">
+                            <i class="fas fa-tree"></i><p>Descriptif extérieur</p>
+                        </div>
+                        <div>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <p>Jardin (terrain arrière)</p>
+                                        <p>Oui prises électriques 2</p>
+                                        <p>éclairage métré surface 15,40 m²</p>
+                                        <p>aménagé pelouse potager</p>
+                                        <p>ouest</p>
+                                        <p>déclivité plat</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Parking</p>
+                                        <p>Place(s) 1 places</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Parking (terrain avant)</p>
+                                        <p>Place(s) 1 places</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Terrasse (terrain arrière)</p>
+                                        <p>Sol pavés</p>
+                                        <p>orientation ouest</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Allée (terrain gauche)</p>
+                                        <p>Sol pavée</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab__features2">
+                        <div class="tab__features__title">
+                            <i class="fas fa-laptop-house"></i><p>PEB</p>
+                        </div>
+                        <table>
+                            <tr>
+                                <td>Peb code unique</td>
+                                <td>20210608025327</td>
+                            </tr>
+                            <tr>
+                                <td>Peb code unique</td>
+                                <td>20210608025327 kWh/an</td>
+                            </tr>
+                            <tr>
+                                <td>E total</td>
+                                <td>53814 kWh/m².an</td>
+                            </tr>
+                            <tr>
+                                <td>Peb (e-spec)</td>
+                                <td>425</td>
+                            </tr>
+                        </table>
+                        <div class="tab__features__title">
+                            <i class="fas fa-couch"></i><p>Aménagement intérieur</p>
+                        </div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <p>Rez-de-chaussée</p>
+                                    <p>52 m²</p>
+                                    <p>Hall d'entrée, séjour, cuisine, wc</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>1er étage</p>
+                                    <p>52 m²</p>
+                                    <p>Hall de nuit, chambre 1, chambre 2, chambre 3,</p>
+                                    <p>salle de bains</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Sous-sol</p>
+                                    <p>53 m²</p>
+                                    <p>Garage, cave, hall de cave, buanderie</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab_content" id="tab2">
+                    <h3>Récapitulatif des métrés</h3>
+                    <table>
+                        <tr>
+                            <th>Rez-de-chaussée</th>
+                            <th>Longueur</th>
+                            <th>Largeur</th>
+                            <th>Superficie</th>
+                        </tr>
+                        <tr>
+                            <td>Hall d'entrée</td>
+                            <td>3.69 m</td>
+                            <td>3.05 m</td>
+                            <td>9.54 m²</td>
+                        </tr>
+                        <tr>
+                            <td>Hall d'entrée</td>
+                            <td>3.69 m</td>
+                            <td>3.05 m</td>
+                            <td>9.54 m²</td>
+                        </tr>
+                        <tr>
+                            <td>Hall d'entrée</td>
+                            <td>3.69 m</td>
+                            <td>3.05 m</td>
+                            <td>9.54 m²</td>
+                        </tr>
+                        <tr>
+                            <td>Hall d'entrée</td>
+                            <td>3.69 m</td>
+                            <td>3.05 m</td>
+                            <td>9.54 m²</td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <th>1er étage</th>
+                            <th>Longueur</th>
+                            <th>Largeur</th>
+                            <th>Superficie</th>
+                        </tr>
+                        <tr>
+                            <td>Hall de nuit</td>
+                            <td>3.69 m</td>
+                            <td>3.05 m</td>
+                            <td>9.54 m²</td>
+                        </tr>
+                        <tr>
+                            <td>Chambre 1</td>
+                            <td>3.69 m</td>
+                            <td>3.05 m</td>
+                            <td>9.54 m²</td>
+                        </tr>
+                        <tr>
+                            <td>Chambre 2</td>
+                            <td>3.69 m</td>
+                            <td>3.05 m</td>
+                            <td>9.54 m²</td>
+                        </tr>
+                        <tr>
+                            <td>Chambre 3</td>
+                            <td>3.69 m</td>
+                            <td>3.05 m</td>
+                            <td>9.54 m²</td>
+                        </tr>
+                        <tr>
+                            <td>Sous-sol</td>
+                            <td>3.69 m</td>
+                            <td>3.05 m</td>
+                            <td>9.54 m²</td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <th>Sous-sol</th>
+                            <th>Longueur</th>
+                            <th>Largeur</th>
+                            <th>Superficie</th>
+                        </tr>
+                        <tr>
+                            <td>Garage</td>
+                            <td>3.69 m</td>
+                            <td>3.05 m</td>
+                            <td>9.54 m²</td>
+                        </tr>
+                        <tr>
+                            <td>Cave</td>
+                            <td>3.69 m</td>
+                            <td>3.05 m</td>
+                            <td>9.54 m²</td>
+                        </tr>
+                        <tr>
+                            <td>Hall de cave</td>
+                            <td>3.69 m</td>
+                            <td>3.05 m</td>
+                            <td>9.54 m²</td>
+                        </tr>
+                        <tr>
+                            <td>Buanderie</td>
+                            <td>3.69 m</td>
+                            <td>3.05 m</td>
+                            <td>9.54 m²</td>
+                        </tr>
+                    </table>
+                    <div class="tab_content__total">
+                        <p>Total: 156.7 m²</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-mobile" id="features_mobile">
+        <div class="features-mobile_container autosize">
+            <h1>Caractéristiques</h1>
+            <div class="tab__features__title">
+                <i class="fas fa-globe"></i><p>Description globale du bien</p>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td>Etat général</td>
+                        <td>Bon état</td>
+                    </tr>
+                    <tr>
+                        <td>Surface totale</td>
+                        <td>905 m²</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre de façades</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre d'étages</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre de chambre(s)</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre de salle de bains</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tab__features__title">
+                <i class="fas fa-tree"></i><p>Descriptif extérieur</p>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <td>
+                            <p>Jardin (terrain arrière)</p>
+                            <p>Oui prises électriques 2</p>
+                            <p>éclairage métré surface 15,40 m²</p>
+                            <p>aménagé pelouse potager</p>
+                            <p>ouest</p>
+                            <p>déclivité plat</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Parking</p>
+                            <p>Place(s) 1 places</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Parking (terrain avant)</p>
+                            <p>Place(s) 1 places</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Terrasse (terrain arrière)</p>
+                            <p>Sol pavés</p>
+                            <p>orientation ouest</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Allée (terrain gauche)</p>
+                            <p>Sol pavée</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tab__features__title">
+                <i class="fas fa-laptop-house"></i><p>PEB</p>
+            </div>
+            <table>
+                <tr>
+                    <td>Peb code unique</td>
+                    <td>20210608025327</td>
+                </tr>
+                <tr>
+                    <td>Peb code unique</td>
+                    <td>20210608025327 kWh/an</td>
+                </tr>
+                <tr>
+                    <td>E total</td>
+                    <td>53814 kWh/m².an</td>
+                </tr>
+                <tr>
+                    <td>Peb (e-spec)</td>
+                    <td>425</td>
+                </tr>
+            </table>
+            <div class="tab__features__title">
+                <i class="fas fa-couch"></i><p>Aménagement intérieur</p>
+            </div>
+            <table>
+                <tr>
+                    <td>
+                        <p>Rez-de-chaussée</p>
+                        <p>52 m²</p>
+                        <p>Hall d'entrée, séjour, cuisine, wc</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>1er étage</p>
+                        <p>52 m²</p>
+                        <p>Hall de nuit, chambre 1, chambre 2, chambre 3,</p>
+                        <p>salle de bains</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Sous-sol</p>
+                        <p>53 m²</p>
+                        <p>Garage, cave, hall de cave, buanderie</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section class="mobile-measurements" id="mobile_measurements">
+        <div class="mobile-measurements-container autosize">
+            <h1>Métrés</h1>
+            <h3>Récapitulatif des métrés</h3>
+            <div class="table-stye1">
+                <table>
+                    <tr>
+                        <th>Rez-de-chaussée</th>
+                        <th>Longueur</th>
+                        <th>Largeur</th>
+                        <th>Superficie</th>
+                    </tr>
+                    <tr>
+                        <td>Hall d'entrée</td>
+                        <td>3.69 m</td>
+                        <td>3.05 m</td>
+                        <td>9.54 m²</td>
+                    </tr>
+                    <tr>
+                        <td>Hall d'entrée</td>
+                        <td>3.69 m</td>
+                        <td>3.05 m</td>
+                        <td>9.54 m²</td>
+                    </tr>
+                    <tr>
+                        <td>Hall d'entrée</td>
+                        <td>3.69 m</td>
+                        <td>3.05 m</td>
+                        <td>9.54 m²</td>
+                    </tr>
+                    <tr>
+                        <td>Hall d'entrée</td>
+                        <td>3.69 m</td>
+                        <td>3.05 m</td>
+                        <td>9.54 m²</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th>1er étage</th>
+                        <th>Longueur</th>
+                        <th>Largeur</th>
+                        <th>Superficie</th>
+                    </tr>
+                    <tr>
+                        <td>Hall de nuit</td>
+                        <td>3.69 m</td>
+                        <td>3.05 m</td>
+                        <td>9.54 m²</td>
+                    </tr>
+                    <tr>
+                        <td>Chambre 1</td>
+                        <td>3.69 m</td>
+                        <td>3.05 m</td>
+                        <td>9.54 m²</td>
+                    </tr>
+                    <tr>
+                        <td>Chambre 2</td>
+                        <td>3.69 m</td>
+                        <td>3.05 m</td>
+                        <td>9.54 m²</td>
+                    </tr>
+                    <tr>
+                        <td>Chambre 3</td>
+                        <td>3.69 m</td>
+                        <td>3.05 m</td>
+                        <td>9.54 m²</td>
+                    </tr>
+                    <tr>
+                        <td>Sous-sol</td>
+                        <td>3.69 m</td>
+                        <td>3.05 m</td>
+                        <td>9.54 m²</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th>Sous-sol</th>
+                        <th>Longueur</th>
+                        <th>Largeur</th>
+                        <th>Superficie</th>
+                    </tr>
+                    <tr>
+                        <td>Garage</td>
+                        <td>3.69 m</td>
+                        <td>3.05 m</td>
+                        <td>9.54 m²</td>
+                    </tr>
+                    <tr>
+                        <td>Cave</td>
+                        <td>3.69 m</td>
+                        <td>3.05 m</td>
+                        <td>9.54 m²</td>
+                    </tr>
+                    <tr>
+                        <td>Hall de cave</td>
+                        <td>3.69 m</td>
+                        <td>3.05 m</td>
+                        <td>9.54 m²</td>
+                    </tr>
+                    <tr>
+                        <td>Buanderie</td>
+                        <td>3.69 m</td>
+                        <td>3.05 m</td>
+                        <td>9.54 m²</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tab_content__total">
+                <p>Total: 156.7 m²</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="desk-plan" id="plans_section">
+        <div class="desk-plan__container autosize">
+            <h1>Plans</h1>
+            <div class="desk-plan__inf">
+                <div class="desk-plan__slider" id="slider_planphotos">
+                    <div class="desk-plan__slider-img" style="background-image: url('img/room.jpg');"></div>
+                    <div class="desk-plan__slider-img" style="background-image: url('img/room.jpg');"></div>
+                    <div class="desk-plan__slider-img" style="background-image: url('img/room.jpg');"></div>
+                    <!-- <img height="500" src="img/room.jpg" alt="Photo">
+                    <img height="500" src="img/room.jpg" alt="Photo">
+                    <img height="500" src="img/room.jpg" alt="Photo"> -->
+                </div>
+                <div class="desk-plan__details">
+                    <div class="desk-plan__details-content">
+                        <div>
+                            <h3>Rez de chaussée</h3>
+                            <p class="">Hall d'entrée</p>
+                            <p>blabladeded 89, 4400 Flémalle</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-arrows-alt-h"></i>
+                            <p>30.5</p>
+                            <p>Largeur</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-arrows-alt-v"></i>
+                            <p>3.69</p>
+                            <p>Longueur</p>
+                        </div>
+                        <div>
+                            <img src="img/flat-icon-green.svg" alt="Flat icon">
+                            <p>9.54</p>
+                            <p>m²</p>
+                        </div>
+                    </div>
+                    <div class="desk-plan__details-content2">
+                        <table>
+                            <tr>
+                                <td>Accès</td>
+                                <td>Parking place(s) 1 places</td>
+                            </tr>
+                            <tr>
+                                <td>Porte</td>
+                                <td>Battante, Pvc, Anti-effraction</td>
+                            </tr>
+                            <tr>
+                                <td>Fenêtre</td>
+                                <td>Châssis type battants matière bois, Vitrage simple, Châssis pvc double vitrage type sans ouverture</td>
+                            </tr>
+                            <tr>
+                                <td>Sol</td>
+                                <td>Carrelage</td>
+                            </tr>
+                            <tr>
+                                <td>Hauteur sous-plafond</td>
+                                <td>2,76m</td>
+                            </tr>
+                            <tr>
+                                <td>Éclairage</td>
+                                <td>Mural</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="desk-plan__map">
+                <img src="img/plan.png" alt="Map">
+            </div>
+        </div>
+    </section>
+
+    <section class="desk-technical" id="technical_section">
+        <div class="desk-technical__container autosize">
+            <div class="desk-technical__content">
+                <h1>Technique</h1>
+                <div class="desk-technical__img" id="technical_slide">
+                    <img width="700" src="img/technical-photo.jpg" alt="Technical photo">
+                    <img width="700" src="img/technical-photo.jpg" alt="Technical photo">
+                    <img width="700" src="img/technical-photo.jpg" alt="Technical photo">
+                </div>
+            </div>
+            <div class="desk-technical__content">
+                <div class="desk-technical__table">
+                    <table>
+                        <tr>
+                            <td>Etat général</td>
+                            <td>Bon état</td>
+                        </tr>
+                        <tr>
+                            <td>Châssis</td>
+                            <td>Pvc</td>
+                        </tr>
+                        <tr>
+                            <td>Chauffage</td>
+                            <td>Mazout (chauf. centr.)</td>
+                        </tr>
+                        <tr>
+                            <td>Téléphone</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Citerne à mazout</td>
+                            <td>Apparente, capacité 2550 l</td>
+                        </tr>
+                        <tr>
+                            <td>Matériaux façade</td>
+                            <td>Pierre naturelle, brique</td>
+                        </tr>
+                        <tr>
+                            <td>Chauffe-eau</td>
+                            <td>Nombre de litres 150</td>
+                        </tr>
+                        <tr>
+                            <td>Compteur électrique</td>
+                            <td>Bi-horaire + triphasé</td>
+                        </tr>
+                        <tr>
+                            <td>Chauffage</td>
+                            <td>Central, Mazout, Radiateurs,
+                                Weishaupt, année 04/2013,
+                                Marque weishaupt</td>
+                        </tr>
+                        <tr>
+                            <td>TV</td>
+                            <td>Télédistribution</td>
+                        </tr>
+                        <tr>
+                            <td>Téléphone</td>
+                            <td>Oui</td>
+                        </tr>
+                        <tr>
+                            <td>Internet</td>
+                            <td>Adsl</td>
+                        </tr>
+                        <tr>
+                            <td>Citerne mazout</td>
+                            <td>Apparente, capacité 2550 l</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="desk-documents" id="documents_section">
+        <div class="desk-documents__container autosize">
+            <div class="desk-documents__text">
+                <h1>Documents</h1>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est</p>
+            </div>
+            <div class="desk-documents__download-v1">
+                <div class="desk-documents__checkbox">
+                    <p class="desk-documents__checkbox-title">Sélectionnez les documents à télécharger</p>
+                    <div class="desk-documents__checkbox-list">
+                        <article>
+                            <input type="checkbox" id="feature1"/>
+                            <div>
+                                <span>
+                                <i class="fas fa-file-pdf"></i>
+                                <p>Livret Servisco</p>
+                                </span>
+                            </div>
+                        </article>
+                        <article>
+                            <input type="checkbox" id="feature1"/>
+                            <div>
+                                <span>
+                                <i class="fas fa-file-image"></i>
+                                <p>ETAGE0.svg</p>
+                                </span>
+                            </div>
+                        </article>
+                        <article>
+                            <input type="checkbox" id="feature1"/>
+                            <div>
+                                <span>
+                                <i class="fas fa-file-image"></i>
+                                <p>ETAGE1.svg</p>
+                                </span>
+                            </div>
+                        </article>
+                        <article>
+                            <input type="checkbox" id="feature1"/>
+                            <div>
+                                <span>
+                                <i class="fas fa-file-image"></i>
+                                <p>ETAGE2.svg</p>
+                                </span>
+                            </div>
+                        </article>
+                        <article>
+                            <input type="checkbox" id="feature1"/>
+                            <div>
+                                <span>
+                                <i class="fas fa-file-image"></i>
+                                <p>ETAGE3.svg</p>
+                                </span>
+                            </div>
+                        </article>
+                        <article>
+                            <input type="checkbox" id="feature1"/>
+                            <div>
+                                <span>
+                                <i class="fas fa-file-image"></i>
+                                <p>ETAGE4.svg</p>
+                                </span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="desk-documents__checkbox-form">
+                    <div class="input-text">
+                        <input id="last_name" type="text" placeholder="Votre nom">
+                    </div>
+                    <div class="input-text">
+                        <input id="name" type="text" placeholder="Votre prénom">
+                    </div>
+                    <div class="input-text">
+                        <input id="email" type="text" placeholder="Votre adresse mail">
+                    </div>
+                    <div class="desk-documents__checkbox-terms">
+                        <label class="container">Je suis d’accord avec la déclaration de confidentialité
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div>
+                        <button class="cbutton">Télécharger</button>
+                    </div>
+                </div>
+            </div>
+            <div class="desk-documents__download-v2">
+                <p>Téléchargement direct</p>
+                <div class="desk-documents__download-v2-cont">
+                    <div class="desk-documents__download-list">
+                        <div class="desk-documents__downloadcont">
+                            <button class="desk-documents__downloadbtn">
+                                <div>
+                                    <i class="fas fa-file-image"></i>
+                                    <span>Livret Servisco</span>
+                                </div>
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                        <div class="desk-documents__downloadcont">
+                            <button class="desk-documents__downloadbtn">
+                                <div>
+                                    <i class="fas fa-file-image"></i>
+                                    <span>Livret Servisco</span>
+                                </div>
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                        <div class="desk-documents__downloadcont">
+                            <button class="desk-documents__downloadbtn">
+                                <div>
+                                    <i class="fas fa-file-image"></i>
+                                    <span>Livret Servisco</span>
+                                </div>
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="desk-documents__download-list">
+                        <div class="desk-documents__downloadcont">
+                            <button class="desk-documents__downloadbtn">
+                                <div>
+                                    <i class="fas fa-file-image"></i>
+                                    <span>Livret Servisco</span>
+                                </div>
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                        <div class="desk-documents__downloadcont">
+                            <button class="desk-documents__downloadbtn">
+                                <div>
+                                    <i class="fas fa-file-image"></i>
+                                    <span>Livret Servisco</span>
+                                </div>
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                        <div class="desk-documents__downloadcont">
+                            <button class="desk-documents__downloadbtn">
+                                <div>
+                                    <i class="fas fa-file-image"></i>
+                                    <span>Livret Servisco</span>
+                                </div>
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="desk-map" id="map_section">
+        <div class="desk-map__container autosize">
+            <div class="desk-map__text">
+                <h1>Environnement et coordonnées </h1>
+                <p><i class="fas fa-map-marker-alt"></i> blabladeded 89, 4400 Flémalle</p>
+            </div>
+
+            <ul class="tabs map_section">
+                <li><a href="#map_tab1">Gallery</a></li>
+                <li><a href="#map_tab2">Submit</a></li>
+                <li><a href="#map_tab3">Situation</a></li>
+           </ul>
+           
+           <div class="tab_container">
+               <div class="tab_content" id="map_tab1">
+                   <div class="desk-map__duration">
+                        <div class="input-text">
+                            <input id="search" type="text" placeholder="Trajet: entrez l’adresse ici">
+                            <i class="fas fa-search-location"></i>
+                        </div>
+                        <div class="desk-map__infdistance">
+                            <div><p>Distance: 2.4 km</p></div>
+                            <div><p>Durée: 10 min </p></div>
+                        </div>
+                        <div class="desk-map__conveyance">
+                            <div class="desk-map__active"><i class="fas fa-car"></i></div>
+                            <div><i class="fas fa-walking"></i></div>
+                            <div><i class="fas fa-bicycle"></i></div>
+                            <div><i class="fas fa-bus"></i></div>
+                        </div>
+                   </div>
+                   <div class="desk-map__dist-traveled">
+                       <h2>Distance parcourable en voiture sur</h2>
+                       <div class="desk-map__dist-traveled-time">
+                            <input type="radio" id="thirty" name="time_travel">
+                            <label for="thirty"><i class="fas fa-stopwatch"></i>30 min</label>
+
+                            <input type="radio" id="fifteen" name="time_travel">
+                            <label for="fifteen"><i class="fas fa-stopwatch"></i>15 min</label>
+                       </div>
+                   </div>
+                   <div class="desk-map__points">
+                       <div class="desk-map__points-km">
+                           <h2>Points d'intérêt</h2>
+                           <div>
+                                <p>Rayon de</p>
+                                <input type="number" id="km" min="1" max="100">
+                                <p>Km</p>
+                           </div>
+                       </div>
+                       <div class="desk-map__points-op">
+                           <div class="desk-map__points-op-slide" id="points_slide">
+                               <div class="desk-map__selectpoints">
+                                    <i class="fas fa-bus"></i>
+                                   <p>Transports</p>
+                               </div>
+                               <div class="desk-map__selectpoints">
+                                    <i class="fas fa-user-md"></i>
+                                    <p>Médecins</p>
+                                </div>
+                                <div class="desk-map__selectpoints">
+                                    <i class="fas fa-clinic-medical"></i>
+                                    <p>Pharmacies</p>
+                                </div>
+                                <div class="desk-map__selectpoints">
+                                    <i class="fas fa-hospital"></i>
+                                    <p>Hôpitaux</p>
+                                </div>
+                                <div class="desk-map__selectpoints">
+                                    <i class="fas fa-bread-slice"></i>
+                                    <p>Boulangeries</p>
+                                </div>
+                                <div class="desk-map__selectpoints">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <p>Banques</p>
+                                </div>
+                                <div class="desk-map__selectpoints">
+                                    <i class="fas fa-school"></i>
+                                    <p>Écoles</p>
+                                </div>
+                                <div class="desk-map__selectpoints">
+                                    <i class="fas fa-futbol"></i>
+                                    <p>Sports</p>
+                                </div>
+                                <div class="desk-map__selectpoints">
+                                    <i class="fas fa-gas-pump"></i>
+                                    <p>Stations d'essence</p>
+                                </div>
+                                <div class="desk-map__selectpoints">
+                                    <i class="fas fa-store-alt"></i>
+                                    <p>Supermarchés</p>
+                                </div>
+                                <div class="desk-map__selectpoints">
+                                    <i class="fas fa-place-of-worship"></i>
+                                    <p>Lieux de culte</p>
+                                </div>
+                                <div class="desk-map__selectpoints">
+                                    <i class="fas fa-utensils"></i>
+                                    <p>Restaurants</p>
+                                </div>
+                                <div class="desk-map__selectpoints">
+                                    <i class="fas fa-film"></i>
+                                    <p>Cinémas</p>
+                                </div>
+                                <div class="desk-map__selectpoints">
+                                    <i class="fas fa-air-freshener"></i>
+                                    <p>Salons de beauté </p>
+                                </div>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="desk-map__map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d325746.596375548!2d5.0793068294101795!3d50.36850703975683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1638557011476!5m2!1ses-419!2smx" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                   </div>
+               </div>
+               <div class="tab_content" id="map_tab2">
+                  <img src="img/lote.jpg" alt="Lote image">
+                  <div class="table-stye1">
+                    <table>
+                        <tr>
+                            <th>Dimensions et aménagements</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>Orientation de la façade avant</td>
+                            <td>Est</td>
+                        </tr>
+                        <tr>
+                            <td>Largeur de la façade</td>
+                            <td>7.50 m</td>
+                        </tr>
+                        <tr>
+                            <td>Surface bâtie au sol</td>
+                            <td>83.00 m</td>
+                        </tr>
+                        <tr>
+                            <td>Profondeur de la parcelle</td>
+                            <td>79.5 m</td>
+                        </tr>
+                        <tr>
+                            <td>Surface de la parcelle</td>
+                            <td>905.00 m²</td>
+                        </tr>
+                    </table>
+                  </div>
+               </div>
+               <div class="tab_content" id="map_tab3">
+                   <img src="img/img_02.jpg" width="500" height="500" alt="Map photo">
+               </div>
+           </div>
+        </div>
+    </section>
+
+    <section class="mobile-map" id="mobile_map">
+        <div class="mobile-map__container">
+            <div class="desk-map__text autosize">
+                <h1>Environnement et coordonnées </h1>
+                <p><i class="fas fa-map-marker-alt"></i> blabladeded 89, 4400 Flémalle</p>
+            </div>
+            <div class="mobile-map__duration autosize">
+                <div class="input-text">
+                    <input id="search" type="text" placeholder="Trajet: entrez l’adresse ici">
+                    <i class="fas fa-search-location"></i>
+                </div>
+                <div class="desk-map__infdistance">
+                    <div><p>Distance: 2.4 km</p></div>
+                    <div><p>Durée: 10 min </p></div>
+                </div>
+                <div class="desk-map__conveyance">
+                    <div class="desk-map__active"><i class="fas fa-car"></i></div>
+                    <div><i class="fas fa-walking"></i></div>
+                    <div><i class="fas fa-bicycle"></i></div>
+                    <div><i class="fas fa-bus"></i></div>
+                </div>
+            </div>
+            <div class="mobile-map__map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d325746.596375548!2d5.0793068294101795!3d50.36850703975683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1638557011476!5m2!1ses-419!2smx" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="mobile-map__distance autosize">
+                <h3>Distance parcourable en voiture sur :</h3>
+                <div class="mobile-map__content desk-map__dist-traveled-time">
+                    <input type="radio" id="mob_thirty" name="mob_time_travel">
+                    <label for="mob_thirty"><i class="fas fa-stopwatch"></i>30 min</label>
+
+                    <input type="radio" id="mob_fifteen" name="mob_time_travel">
+                    <label for="mob_fifteen"><i class="fas fa-stopwatch"></i>15 min</label>
+                </div>
+            </div>
+            <div class="mobile-map__points autosize">
+                <h3>Points d'intérêt</h3>
+                <div class="mobile-map__content">
+                    <div class="mobile-map__inputnumb">
+                        <p>Rayon de</p>
+                        <input type="number" id="km" min="1" max="100">
+                        <p>Km</p> 
+                   </div>
+                   <div class="mobile-map__btnpoints" id="mobile_map_selectpoints">
+                        <div class="mobile-map__selectpoints">
+                            <i class="fas fa-bus"></i>
+                            <p>Transports</p>
+                        </div>
+                        <div class="mobile-map__selectpoints">
+                            <i class="fas fa-user-md"></i>
+                            <p>Médecins</p>
+                        </div>
+                        <div class="mobile-map__selectpoints">
+                            <i class="fas fa-clinic-medical"></i>
+                            <p>Pharmacies</p>
+                        </div>
+                        <div class="mobile-map__selectpoints">
+                            <i class="fas fa-hospital"></i>
+                            <p>Hôpitaux</p>
+                        </div>
+                        <div class="mobile-map__selectpoints">
+                            <i class="fas fa-bread-slice"></i>
+                            <p>Boulangeries</p>
+                        </div>
+                        <div class="mobile-map__selectpoints">
+                            <i class="fas fa-dollar-sign"></i>
+                            <p>Banques</p>
+                        </div>
+                        <div class="mobile-map__selectpoints">
+                            <i class="fas fa-school"></i>
+                            <p>Écoles</p>
+                        </div>
+                        <div class="mobile-map__selectpoints">
+                            <i class="fas fa-futbol"></i>
+                            <p>Sports</p>
+                        </div>
+                        <div class="mobile-map__selectpoints">
+                            <i class="fas fa-gas-pump"></i>
+                            <p>Stations d'essence</p>
+                        </div>
+                        <div class="mobile-map__selectpoints">
+                            <i class="fas fa-store-alt"></i>
+                            <p>Supermarchés</p>
+                        </div>
+                        <div class="mobile-map__selectpoints">
+                            <i class="fas fa-place-of-worship"></i>
+                            <p>Lieux de culte</p>
+                        </div>
+                        <div class="mobile-map__selectpoints">
+                            <i class="fas fa-utensils"></i>
+                            <p>Restaurants</p>
+                        </div>
+                        <div class="mobile-map__selectpoints">
+                            <i class="fas fa-film"></i>
+                            <p>Cinémas</p>
+                        </div>
+                        <div class="mobile-map__selectpoints">
+                            <i class="fas fa-air-freshener"></i>
+                            <p>Salons de beauté </p>
+                        </div>
+                   </div>
+                </div>
+            </div>
+            <div class="mobile-map__parcel autosize">
+                <h3>Parcelle</h3>
+                <div class="mobile-map__content">
+                    <img class="mobile-map__imglote" src="img/lote.jpg" alt="Lote image">
+                    <div class="table-stye1">
+                        <table>
+                            <tr>
+                                <th>Dimensions et aménagements</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td>Orientation de la façade avant</td>
+                                <td>Est</td>
+                            </tr>
+                            <tr>
+                                <td>Largeur de la façade</td>
+                                <td>7.50 m</td>
+                            </tr>
+                            <tr>
+                                <td>Surface bâtie au sol</td>
+                                <td>83.00 m</td>
+                            </tr>
+                            <tr>
+                                <td>Profondeur de la parcelle</td>
+                                <td>79.5 m</td>
+                            </tr>
+                            <tr>
+                                <td>Surface de la parcelle</td>
+                                <td>905.00 m²</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="mobile-map__situation autosize">
+                <h3>Situation</h3>
+                <div class="mobile-map__content">
+                    <img class="mobile-map__imgsit" src="img/img_02.jpg" width="500" height="500" alt="Map photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="desk-agency" id="agency_section">
+        <div class="desk-agency__container autosize">
+            <h1>L ' agence</h1>
+            <div class="desk-agency__content">
+                <div class="desk-agency__box">
+                    <div class="desk-agency__slide" id="agency_slide">
+                        <div class="desk-agency__slide-img" style="background-image: url('img/agency.jpeg');"></div>
+                        <div class="desk-agency__slide-img" style="background-image: url('img/agency.jpeg');"></div>
+                        <div class="desk-agency__slide-img" style="background-image: url('img/agency.jpeg');"></div>
+                    </div>
+                    <div class="desk-agency__contact">
+                        <table>
+                            <tr>
+                                <td><i class="fas fa-map-marker-alt"></i></td>
+                                <td>Rue du Luxembourg 16B, 
+                                    1000 Bruxelles</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-mobile-alt"></i></td>
+                                <td>+32(0)02 505 38 50</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-envelope"></i></td>
+                                <td>info@weinvest.be</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-globe"></i></td>
+                                <td>weinvest.befr</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-phone"></i></td>
+                                <td>02 503 42 23</td>
+                            </tr>
+                            <tr>
+                                <td><img src="img/ipi-icon-white.svg" alt="IPI icon"></td>
+                                <td>507.630</td>
+                            </tr>
+                        </table>
+                        <div>
+                            <a href="https://es-la.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a>
+                            <a href="https://mx.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-globe"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="desk-agency__text">
+                    <h3>À propos de nous</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+                    <p>Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
+                    <p>Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+                    Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat. vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et </p>
+                </div>
+                <div class="mobile-agency__box-second">
+                    <div class="mobile-agency__contact">
+                        <table>
+                            <tr>
+                                <td><i class="fas fa-map-marker-alt"></i></td>
+                                <td>Rue du Luxembourg 16B, 
+                                    1000 Bruxelles</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-mobile-alt"></i></td>
+                                <td>+32(0)02 505 38 50</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-envelope"></i></td>
+                                <td>info@weinvest.be</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-globe"></i></td>
+                                <td>weinvest.befr</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fas fa-phone"></i></td>
+                                <td>02 503 42 23</td>
+                            </tr>
+                            <tr>
+                                <td><img src="img/ipi-icon-white.svg" alt="IPI icon"></td>
+                                <td>507.630</td>
+                            </tr>
+                        </table>
+                        <div>
+                            <a href="https://es-la.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a>
+                            <a href="https://mx.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-globe"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-us" id="contact_us_section">
+        <div class="contact-us__container autosize">
+            <div class="contact-us__agent">
+                <h1>Contactez-nous / Contactez l'agent</h1>
+                <img width="500" src="img/agent.jpg" alt="Agent photo">
+                <div class="contact-us__agent-content">
+                    <h3>Demo Flexvision</h3>
+                    <div class="contact-us__email">
+                        <i class="fas fa-envelope"></i>
+                        <p>flexvisiondemoclassique@flexvision.be</p>
+                    </div>
+                    <div class="contact-us__phone">
+                        <i class="fas fa-mobile-alt"></i>
+                        <p>48 156 15614</p>
+                    </div>
+                </div>
+                <div class="contact-us__social-media">
+                    <a href="https://es-la.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a>
+                    <a href="https://mx.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fas fa-globe"></i></a>
+                </div>
+            </div>
+            <div class="contact-us__form">
+                <h2>Contactez-nous / Contactez l'agent</h2>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam.</p>
+                <div class="desk-documents__checkbox-form">
+                    <div class="input-text">
+                        <input id="last_name" type="text" placeholder="Votre nom">
+                    </div>
+                    <div class="input-text">
+                        <input id="name" type="text" placeholder="Votre prénom">
+                    </div>
+                    <div class="input-text">
+                        <textarea id="message" name="message" rows="5" cols="50" placeholder="Votre message"></textarea>
+                    </div>
+                    <div class="desk-documents__checkbox-terms">
+                        <label class="container">Je suis d’accord avec la déclaration de confidentialité
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div>
+                        <button class="cbutton">Télécharger</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="desk-brochure" id="brochure_section">
+        <div class="desk-brochure__container autosize">
+            <div class="desk-brochure__image" style="background-image: url('img/img_01.jpg');"></div>
+            <div class="desk-brochure__form">
+                <h2>Télécharger le livret</h2>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit.</p>
+                <div class="desk-documents__checkbox-form">
+                    <div class="input-text">
+                        <input id="last_name" type="text" placeholder="Votre nom">
+                    </div>
+                    <div class="input-text">
+                        <input id="name" type="text" placeholder="Votre prénom">
+                    </div>
+                    <div class="input-text">
+                        <input id="email" type="text" placeholder="Votre adresse mail">
+                    </div>
+                    <div class="desk-documents__checkbox-terms">
+                        <label class="container">Je suis d’accord avec la déclaration de confidentialité
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div>
+                        <button class="cbutton">Envoyer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="submenu-responsive">
+        <div class="submenu-responsive__container autosize">
+            <a href="#mobile_map"><i class="fas fa-map-marker-alt"></i></a>
+            <a href="#mobile_measurements"><i class="fas fa-ruler"></i></a>
+            <div></div>
+            <a class="submenu-responsive__btn-home" onclick="scroll_home()" href="#javascript:void(0)"><i class="fas fa-home"></i></a>
+            <a href="#features_mobile"><i class="fas fa-list-alt"></i></a>
+            <a href="#javascript:void(0)" onclick="room_data()"><i class="fas fa-laptop-house"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer__container autosize">
+            <div class="footer__logo">
+                <img width="150" src="img/logo.svg" alt="Logo img">
+            </div>
+            <!-------- AGENT SECTION --------->
+            <div class="footer__agent">
+                <div>
+                    <img width="500" src="img/agent.jpg" alt="Agent photo">
+                </div>
+                <div>
+                    <h2>Demo Flexvision</h2>
+                    <div class="contact-us__email">
+                        <i class="fas fa-envelope"></i>
+                        <p>flexvisiondemoclassique@flexvision.be</p>
+                    </div>
+                    <div class="contact-us__phone">
+                        <i class="fas fa-mobile-alt"></i>
+                        <p>48 156 15614</p>
+                    </div>
+                </div>
+            </div>
+            <!-------- AGENCY CONTACT --------->
+            <!-- <div class="footer_contact">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><i class="fas fa-map-marker-alt"></i></td>
+                            <td>Rue du Luxembourg 16B, 
+                                1000 Bruxelles</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-mobile-alt"></i></td>
+                            <td>+32(0)02 505 38 50</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-envelope"></i></td>
+                            <td>info@weinvest.be</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-globe"></i></td>
+                            <td>weinvest.befr</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-phone"></i></td>
+                            <td>02 503 42 23</td>
+                        </tr>
+                        <tr>
+                            <td><img src="img/ipi-icon-white.svg" alt="IPI icon"></td>
+                            <td>507.630</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> -->
+
+            <div class="footer__social-media">
+                <div class="contact-us__social-media">
+                    <a href="https://es-la.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a>
+                    <a href="https://mx.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fas fa-globe"></i></a>
+                </div>
+            </div>
+            <div class="footer__copyright">
+                <div>
+                    <p>DEMO IMMO SRL –Rue XX XXXXX X, XXXX XXXXXXX – Tel: +XX (X) XX XX XX XX – Mail: info@demoimmo – N° d’entreprise/TVA: BEXXX.XXX.XXX 
+                    Agent immobilier intermédiaire agréé en Belgique sous le N° IPI XXXXXX Instance Officielle de Contrôle: IPI (Institut Professionel des Agents Immobiliers) 
+                    rue de Luxembourg 16B – 1000 BRUXELLES – Tél. : 02/505.33.50 – www.ipi.be </p>
+                    <p>Copyright © 2021 DEMO IMMO | <a href="#">Website by Flexvision</a> | <a href="#">Vie privée</a> | <a href="#">Conditions</a> </p> 
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/slick.min.js"></script>
+    <script src="js/functions.js"></script>
+</body>
