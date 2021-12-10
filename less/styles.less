@@ -553,6 +553,8 @@ transition: all 0.3s linear;
 border-radius: 50px;
 display: flex;
 flex-direction: column;
+justify-content: center;
+align-items: center;
     a, i{
     transition: all 0.3s linear;
     z-index: 1;
@@ -940,7 +942,7 @@ padding: 87px 0;
 }
 .desk-technical__container{
 display: flex;
-justify-content: end;
+justify-content: flex-end;
 align-items: center;
 position: relative;
 padding: 35px 0 51px 0;
@@ -1175,7 +1177,7 @@ justify-content: space-between;
 background-color: @primary;
 transition: all 0.25s linear;
 color: white;
-}
+} 
 .desk-documents__download-list{
 padding: 0 70px;
 width: 50%;
@@ -1230,6 +1232,10 @@ margin: 80px 100px 0 0;
     font-family: @roboto;
     font-size: 15px;
     }
+}
+.slick-prev, .slick-next{
+width: auto;
+height: auto;
 }
 .desk-agency__slide{
     .slick-prev:before, 
@@ -1418,7 +1424,7 @@ padding-bottom: 180px;
 .desk-brochure__container{
 position: relative;
 display: flex;
-justify-content: end;
+justify-content: flex-end;
 //background-color: @gray;
 //display: grid;
 //grid-template-columns: 40% 60%;
@@ -2370,11 +2376,17 @@ display: none;
         }
     }
     .desk-documents{
-    background-color: @primary-light;
+    background-color: @black;
     padding-top: 120px;
+        .desk-documents__text p{
+        color: white;
+        }
+        h1{
+        color: @primary-light;
+        }
     }
     .desk-documents__download-v1{
-    background-color: @primary-light;
+    background-color: @black;
     padding: 25px 0 120px 0;
         .desk-documents__checkbox{
         border: none;
