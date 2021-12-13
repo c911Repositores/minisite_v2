@@ -128,6 +128,10 @@ $(document).ready(function() {
         return true;
     });
 
+    //////////////////////////////////////////////////////////////////////////////////////
+    // EFFECTS
+    //////////////////////////////////////////////////////////////////////////////////////
+    AOS.init();
 });
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -139,9 +143,11 @@ function changeinfo(){
     if(compare){
         $("#general_info").removeClass("hidden-opacity");
         $("#room_info").addClass("hidden-opacity");
+        $("#btn_play").addClass("hidden");
     } else{
         $("#general_info").addClass("hidden-opacity");
         $("#room_info").removeClass("hidden-opacity");
+        $("#btn_play").removeClass("hidden");
     }
 } 
 
@@ -179,17 +185,17 @@ function open_measures(){
 
 function navopen_features(){
     open_features();
-    open_nevmenu();
+    open_navmenu();
 }
 
 function navopen_measures(){
     open_measures();
-    open_nevmenu();
+    open_navmenu();
 }
 
 function navroom_data(){
     room_data();
-    open_nevmenu();
+    open_navmenu();
 }
 
 function open_features(){
@@ -202,16 +208,21 @@ function open_features(){
     return false;
 }
 
-function open_nevmenu(){
+function open_navmenu(){
     var compare = $("#open_navmenu").hasClass("hidden-nav");
+    var width_window = $(window).width();
     if(compare){
         $("#open_navmenu").removeClass("hidden-nav");
-        $("#btn_closebars").removeClass("hidden");
-        $("#btn_bars").addClass("hidden");
+        if(width_window>1200){
+            $("#btn_closebars").removeClass("hidden");
+            $("#btn_bars").addClass("hidden");
+        }
     } else{
         $("#open_navmenu").addClass("hidden-nav");
-        $("#btn_closebars").addClass("hidden");
-        $("#btn_bars").removeClass("hidden");
+        if(width_window>1200){
+            $("#btn_closebars").addClass("hidden");
+            $("#btn_bars").removeClass("hidden");
+        }
     }
 }
 

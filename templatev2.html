@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slick-theme.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
@@ -29,15 +30,16 @@
                 </ul>
                 <div class="nav-desk__agent">
                     <a href="#contact_us_section"><img class="nav-desk__agent-img" src="img/agent.jpg" alt="Agent image"></a>
-                    <i class="btn_bars fas fa-bars" id="btn_bars" onclick="open_nevmenu()"></i>
-                    <i class="btn_closebars fas fa-times hidden" id="btn_closebars" onclick="open_nevmenu()"></i>
+                    <i class="btn_bars fas fa-bars" id="btn_bars" onclick="open_navmenu()"></i>
+                    <i class="btn_closebars fas fa-times hidden" id="btn_closebars" onclick="open_navmenu()"></i>
                 </div>
             </div>
         </div>
         <div class="open-navmenu hidden-nav" id="open_navmenu">
             <ul>
-                <li class="btndesk-desc"><a href="#description_desk" onclick="open_nevmenu()"><i class="far fa-file"></i> Description</li></a>
-                <li class="btnmobile-desc"><a href="#javascript:void(0)" onclick="scroll_home()"><i class="far fa-file"></i> Description</li></a>
+                <i class="movile_btn_closebars fas fa-times hidden" id="btn_closebars" onclick="open_navmenu()"></i>
+                <li class="btndesk-desc"><a href="#description_desk" onclick="open_navmenu()"><i class="far fa-file"></i> Description</li></a>
+                <li class="btnmobile-desc"><a href="#javascript:void(0)" onclick="scroll_home();navopen_features()"><i class="far fa-file"></i> Description</li></a>
 
                 <li class="btndesk-caract"><a href="#features_section" onclick="navopen_features()"><i class="fas fa-list-alt"></i> Caractéristiques</li></a>
                 <li class="btnmob-caract"><a href="#features_mobile" onclick="navopen_features()"><i class="fas fa-list-alt"></i> Caractéristiques</li></a>
@@ -45,20 +47,20 @@
                 <li class="btndesk-feat"><a href="#features_section" onclick="navopen_measures()"><i class="fas fa-ruler"></i> Métrés</li></a>
                 <li class="btnmob-feat"><a href="#mobile_measurements" onclick="navopen_measures()"><i class="fas fa-ruler"></i> Métrés</li></a>
 
-                <li class="btndesk-plans"><a href="#plans_section" onclick="open_nevmenu()"><i class="fas fa-laptop-house"></i> Plans</li></a>
+                <li class="btndesk-plans"><a href="#plans_section" onclick="open_navmenu()"><i class="fas fa-laptop-house"></i> Plans</li></a>
                 <li class="btnmob-plans"><a href="#javascript:void(0)" onclick="navroom_data()"><i class="fas fa-laptop-house"></i> Plans</li></a>
 
-                <li><a href="#technical_section" onclick="open_nevmenu()"><i class="fas fa-wrench"></i> Technique</li></a>
-                <li><a href="#documents_section" onclick="open_nevmenu()"><i class="fas fa-file-alt"></i> Documents</li></a>
+                <li><a href="#technical_section" onclick="open_navmenu()"><i class="fas fa-wrench"></i> Technique</li></a>
+                <li><a href="#documents_section" onclick="open_navmenu()"><i class="fas fa-file-alt"></i> Documents</li></a>
 
-                <li class="btndesk-map"><a href="#map_section" onclick="open_nevmenu()"><i class="fas fa-map-marker-alt"></i> Environnement et 
+                <li class="btndesk-map"><a href="#map_section" onclick="open_navmenu()"><i class="fas fa-map-marker-alt"></i> Environnement et 
                     coordonnées</li></a>
-                <li class="btnmob-map"><a href="#mobile_map" onclick="open_nevmenu()"><i class="fas fa-map-marker-alt"></i> Environnement et 
+                <li class="btnmob-map"><a href="#mobile_map" onclick="open_navmenu()"><i class="fas fa-map-marker-alt"></i> Environnement et 
                     coordonnées</li></a>
 
-                <li><a href="#agency_section" onclick="open_nevmenu()"><i class="fas fa-users"></i> L ‘ agence</li></a>
-                <li><a href="#contact_us_section" onclick="open_nevmenu()"><i class="fas fa-user"></i> Contact</li></a>
-                <li><a href="#brochure_section" onclick="open_nevmenu()"><i class="fas fa-scroll"></i> Télécharger le livret</li></a>
+                <li><a href="#agency_section" onclick="open_navmenu()"><i class="fas fa-users"></i> L ‘ agence</li></a>
+                <li><a href="#contact_us_section" onclick="open_navmenu()"><i class="fas fa-user"></i> Contact</li></a>
+                <li><a href="#brochure_section" onclick="open_navmenu()"><i class="fas fa-scroll"></i> Télécharger le livret</li></a>
             </ul>
         </div>
     </nav>
@@ -87,7 +89,7 @@
                     <img src="img/360-icon.svg" alt="360 icon">
                 </div>
             </div>
-            <div class="description-mobile__text hidden hidden-text" id="desc_mobile">
+            <div class="description-mobile__text hidden hidden-text" id="desc_mobile" data-aos="fade-up" data-aos-anchor-placement="top-center">
                 <div>
                     <h3>blabladeded 89, 4400 Flémalle</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vestibulum convallis tempus. Vivamus placerat mi eu molestie laoreet. Praesent a posuere augue. In lorem nisl, congue vel nulla cursus, pretium interdum nibh. Cras lobortis massa rutrum tempor finibus. Pellentesque nisi arcu, convallis eget rhoncus ac, dapibus et risus. Nulla ultrices, nibh egestas iaculis vestibulum, metus erat varius augue, eget auctor ante tellus in augue. Vivamus fermentum quam a mauris interdum feugiat. Maecenas finibus erat est, in cursus enim imperdiet nec. Phasellus auctor, tellus sed euismod gravida, enim massa congue lacus, vel dignissim ipsum odio id nulla. Vivamus vel turpis justo.
@@ -279,9 +281,10 @@
     </section>
 
     <section class="description-desk" id="description_desk">
-        <div class="description-desk__container autosize">
+        <div class="description-desk__container autosize" data-aos="fade-up" data-aos-anchor-placement="top-center">
             <div class="button-controls">
-                <img src="img/360-icon.svg" alt="360 icon">
+                <a class="hidden" id="btn_play" href="#"><i class="fas fa-play-circle"></i></a>
+                <a href="#"><img src="img/360-icon.svg" alt="360 icon"></a>
             </div>
             <div class="description-desk__text">
                 <h3>blabladeded 89, 4400 Flémalle</h3>
@@ -321,7 +324,7 @@
     </section>
 
     <section class="features-desk" id="features_section">
-        <div class="features-desk__container autosize">
+        <div class="features-desk__container autosize" data-aos="fade-up" data-aos-anchor-placement="top-center">
             <ul class="tabs features_section">
                 <li id="btn_features"><a href="#tab1">Caractéristiques</a></li>
                 <li id="btn_measures"><a href="#tab2">Métrés</a></li>
@@ -568,7 +571,7 @@
     </section>
 
     <section class="features-mobile" id="features_mobile">
-        <div class="features-mobile_container autosize">
+        <div class="features-mobile_container autosize" data-aos="fade-up" data-aos-anchor-placement="top-center">
             <h1>Caractéristiques</h1>
             <div class="tab__features__title">
                 <i class="fas fa-globe"></i><p>Description globale du bien</p>
@@ -695,7 +698,7 @@
     </section>
 
     <section class="mobile-measurements" id="mobile_measurements">
-        <div class="mobile-measurements-container autosize">
+        <div class="mobile-measurements-container autosize" data-aos="fade-up" data-aos-anchor-placement="top-center">
             <h1>Métrés</h1>
             <h3>Récapitulatif des métrés</h3>
             <div class="table-stye1">
@@ -809,7 +812,7 @@
     </section>
 
     <section class="desk-plan" id="plans_section">
-        <div class="desk-plan__container autosize">
+        <div class="desk-plan__container autosize" data-aos="fade-up" data-aos-anchor-placement="top-center">
             <h1>Plans</h1>
             <div class="desk-plan__inf">
                 <div class="desk-plan__slider" id="slider_planphotos">
@@ -879,7 +882,7 @@
         </div>
     </section>
 
-    <section class="desk-technical" id="technical_section">
+    <section class="desk-technical" id="technical_section" data-aos="fade-up" data-aos-anchor-placement="top-center">
         <h1>Technique</h1>
         <div class="desk-technical__container autosize">
             <div class="desk-technical__content">
@@ -953,7 +956,7 @@
     </section>
 
     <section class="desk-documents" id="documents_section">
-        <div class="desk-documents__container autosize">
+        <div class="desk-documents__container autosize" data-aos="fade-up" data-aos-anchor-placement="top-center">
             <div class="desk-documents__text">
                 <h1>Documents</h1>
                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est</p>
@@ -1018,7 +1021,7 @@
                         </article>
                     </div>
                 </div>
-                <div class="desk-documents__checkbox-form">
+                <div class="desk-documents__checkbox-form doc-form-size">
                     <div class="input-text">
                         <input id="last_name" type="text" placeholder="Votre nom">
                     </div>
@@ -1039,7 +1042,7 @@
                     </div>
                 </div>
             </div>
-            <div class="desk-documents__download-v2">
+            <div class="desk-documents__download-v2" style="display: none;">
                 <p>Téléchargement direct</p>
                 <div class="desk-documents__download-v2-cont">
                     <div class="desk-documents__download-list">
@@ -1106,7 +1109,7 @@
     </section>
 
     <section class="desk-map" id="map_section">
-        <div class="desk-map__container autosize">
+        <div class="desk-map__container autosize" data-aos="fade-up" data-aos-anchor-placement="top-center">
             <div class="desk-map__text">
                 <h1>Environnement et coordonnées </h1>
                 <p><i class="fas fa-map-marker-alt"></i> blabladeded 89, 4400 Flémalle</p>
@@ -1259,7 +1262,7 @@
     </section>
 
     <section class="mobile-map" id="mobile_map">
-        <div class="mobile-map__container">
+        <div class="mobile-map__container" data-aos="fade-up" data-aos-anchor-placement="top-center">
             <div class="desk-map__text autosize">
                 <h1>Environnement et coordonnées </h1>
                 <p><i class="fas fa-map-marker-alt"></i> blabladeded 89, 4400 Flémalle</p>
@@ -1405,7 +1408,7 @@
     </section>
 
     <section class="desk-agency" id="agency_section">
-        <div class="desk-agency__container autosize">
+        <div class="desk-agency__container autosize" data-aos="fade-up" data-aos-anchor-placement="top-center">
             <h1>L ' agence</h1>
             <div class="desk-agency__content">
                 <div class="desk-agency__box">
@@ -1418,24 +1421,24 @@
                         <table>
                             <tr>
                                 <td><i class="fas fa-map-marker-alt"></i></td>
-                                <td>Rue du Luxembourg 16B, 
-                                    1000 Bruxelles</td>
+                                <td><a href="#">Rue du Luxembourg 16B, 
+                                    1000 Bruxelles</a></td>
                             </tr>
                             <tr>
                                 <td><i class="fas fa-mobile-alt"></i></td>
-                                <td>+32(0)02 505 38 50</td>
+                                <td><a href="#">+32(0)02 505 38 50</a></td>
                             </tr>
                             <tr>
                                 <td><i class="fas fa-envelope"></i></td>
-                                <td>info@weinvest.be</td>
+                                <td><a href="#">info@weinvest.be</a></td>
                             </tr>
                             <tr>
                                 <td><i class="fas fa-globe"></i></td>
-                                <td>weinvest.befr</td>
+                                <td><a href="#">weinvest.befr</a></td>
                             </tr>
                             <tr>
                                 <td><i class="fas fa-phone"></i></td>
-                                <td>02 503 42 23</td>
+                                <td><a href="#">02 503 42 23</a></td>
                             </tr>
                             <tr>
                                 <td><img src="img/ipi-icon-white.svg" alt="IPI icon"></td>
@@ -1499,7 +1502,7 @@
     </section>
 
     <section class="contact-us" id="contact_us_section">
-        <div class="contact-us__container autosize">
+        <div class="contact-us__container autosize" data-aos="fade-up" data-aos-anchor-placement="top-center">
             <div class="contact-us__agent">
                 <h1>Contactez-nous / Contactez l'agent</h1>
                 <img width="500" src="img/agent.jpg" alt="Agent photo">
@@ -1549,7 +1552,7 @@
     </section>
 
     <section class="desk-brochure" id="brochure_section">
-        <div class="desk-brochure__container autosize">
+        <div class="desk-brochure__container autosize" data-aos="fade-up" data-aos-anchor-placement="top-center">
             <div class="desk-brochure__image" style="background-image: url('img/img_01.jpg');"></div>
             <div class="desk-brochure__form">
                 <h2>Télécharger le livret</h2>
@@ -1601,14 +1604,14 @@
                 </div>
                 <div>
                     <h2>Demo Flexvision</h2>
-                    <div class="contact-us__email">
+                    <a href="#"><div class="contact-us__email">
                         <i class="fas fa-envelope"></i>
                         <p>flexvisiondemoclassique@flexvision.be</p>
-                    </div>
-                    <div class="contact-us__phone">
+                    </div></a>
+                    <a href="#"><div class="contact-us__phone">
                         <i class="fas fa-mobile-alt"></i>
                         <p>48 156 15614</p>
-                    </div>
+                    </div></a>
                 </div>
             </div>
             <!-------- AGENCY CONTACT --------->
@@ -1617,24 +1620,24 @@
                     <tbody>
                         <tr>
                             <td><i class="fas fa-map-marker-alt"></i></td>
-                            <td>Rue du Luxembourg 16B, 
-                                1000 Bruxelles</td>
+                            <td><a href="#">Rue du Luxembourg 16B, 
+                                1000 Bruxelles</a></td>
                         </tr>
                         <tr>
                             <td><i class="fas fa-mobile-alt"></i></td>
-                            <td>+32(0)02 505 38 50</td>
+                            <td><a href="#">+32(0)02 505 38 50</a></td>
                         </tr>
                         <tr>
                             <td><i class="fas fa-envelope"></i></td>
-                            <td>info@weinvest.be</td>
+                            <td><a href="#">info@weinvest.be</a></td>
                         </tr>
                         <tr>
                             <td><i class="fas fa-globe"></i></td>
-                            <td>weinvest.befr</td>
+                            <td><a href="#">weinvest.befr</a></td>
                         </tr>
                         <tr>
                             <td><i class="fas fa-phone"></i></td>
-                            <td>02 503 42 23</td>
+                            <td><a href="#">02 503 42 23</a></td>
                         </tr>
                         <tr>
                             <td><img src="img/ipi-icon-white.svg" alt="IPI icon"></td>
@@ -1664,5 +1667,6 @@
     </footer>
 
     <script src="js/slick.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/functions.js"></script>
 </body>
