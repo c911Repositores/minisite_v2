@@ -399,7 +399,8 @@ align-items: center;
 justify-content: space-evenly;
 height: auto;
 }
-.header-desk__measures{
+.header-desk__measures,
+.header-mobile__measures{
 display: grid; 
 grid-template-columns: 1fr 1fr 1fr;
 grid-gap: 15px 10px;
@@ -434,6 +435,19 @@ padding-top: 50px;
     }
     div:nth-child(even){
     background-color: @primary-light;
+    }
+}
+.header-mobile__measures{
+display: none;
+padding-top: 25px;
+    div:nth-child(2){
+        p, i{
+        color: @primary-dark;
+        }
+    }
+    div:nth-child(odd){
+    background-color: @primary;
+    color: white;
     }
 }
 .header-desk__measures2{ 
@@ -928,6 +942,9 @@ justify-content: center;
     }
     tr:not(:last-child){
     border-bottom: 0.5px solid @gray-light;
+    }
+    tr td:nth-child(2){
+    width: 100%;
     }
 }
 .desk-plan__slider,
@@ -2100,6 +2117,13 @@ display: none;
     .tab_content__total{
     width: 100%!important;
     }
+    .desk-documents__download-v1 article,
+    .desk-documents__download-v1 article input{
+    width: 215px;
+    }
+    .features-desk__container .tab__features2{
+    padding-top: 50px;
+    }
 }
 @media screen and (max-width: 1230px){
     .desk-map{
@@ -2408,6 +2432,13 @@ display: none;
         .tab__features__title{
         padding-top: 50px;
         }
+        tr td:last-child{
+        pointer-events: none;
+        }
+        tr td:last-child > a{
+        text-decoration:none; 
+        color:inherit;
+        }
     }
     .mobile-measurements{
     display: block;
@@ -2441,6 +2472,9 @@ display: none;
     }
     .header-desk__measures{
     padding-top: 28px;
+    }
+    .header-desk__inforoom .header-desk__measures{
+    display: none;
     }
     .description-desk{
     display: none;
@@ -2590,6 +2624,12 @@ display: none;
     .desk-brochure__container{
     flex-direction: column;
     padding-top: 120px;
+    }
+    .header-mobile__measures{
+    display: grid;
+    }
+    .header-desk__submenu-select{
+    background-color: @primary!important;
     }
 }
 @media screen and (max-width: 1100px){
@@ -2807,6 +2847,12 @@ display: none;
         right: 88px;
         }
     }
+    .header-desk__submenu{
+    margin-top: 0;
+    }
+    .header-desk__container{
+    padding: 0;
+    }
 }
 @media screen and (max-width: 750px){
     .mobile-map__container .desk-map__infdistance{
@@ -2946,6 +2992,13 @@ display: none;
     padding-right: 0;
     padding-left: 0;
     }
+    .header-mobile__measures div{
+    width: 75px;
+    height: 80px;
+        p{
+        font-size: 12px;
+        }
+    }
 }
 @media screen and (max-width: 500px){
     .mobile-measurements-container .table-stye1{
@@ -3004,6 +3057,11 @@ display: none;
     }
     .peb-section .triangulo{
     border-bottom: 15px solid transparent;
+    }
+    input[type='text'],
+    input[type='number'],
+    textarea {
+    font-size: 16px;
     }
 }
 @media screen and (max-width: 450px){
